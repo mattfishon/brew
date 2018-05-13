@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "../src/main/resources/static",
       "assets": [
         "assets",
         "favicon.ico"
@@ -28,6 +28,10 @@
         "prod": "environments/environment.prod.ts"
       }
     }
+  ],
+  "styles": [
+   "styles.css",
+   "../node_modules/@swimlane/ngx-charts/release/ngx-charts.css"
   ],
   "e2e": {
     "protractor": {
