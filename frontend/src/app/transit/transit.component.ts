@@ -66,7 +66,7 @@ export class TransitComponent implements OnInit {
   
       this.pollingData =
 		Observable
-	    .interval(5000)
+	    .interval(30000)
 	    .startWith(0)
 	    .timeInterval()
 	    .flatMap( () => this.transitService.getConfig() )

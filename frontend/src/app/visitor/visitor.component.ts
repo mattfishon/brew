@@ -16,7 +16,7 @@ import { colorSets as ngxChartsColorsets } from '@swimlane/ngx-charts/release/ut
 })
 export class VisitorComponent implements OnInit {
 
-  pieView = [375, 375];
+  pieView = [230, 210];
   visitsPieData: any;
   visitsPieColorScheme: any;
 
@@ -33,7 +33,7 @@ export class VisitorComponent implements OnInit {
   testData: any;
   testView = [700, 600];
   
-  view = [700, 225];
+  view = [700, 210];
 
   public visible :boolean = false;
       
