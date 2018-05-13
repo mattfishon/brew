@@ -1,0 +1,82 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+TODO:  Angular is running in the development mode. Call enableProdMode() to enable the production mode.
+look into the above!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+I ran these since I had to uninstall ang 6.0
+npm cache clean
+npm cache verify
+
+When I ran:
+npm install -g @angular/cli@1.7.4
+it seemed to install Angular in location:
+C:\Users\tango\AppData\Roaming\npm\node_modules\@angular
+
+Now following instrs below in section 5 only to hook angular into spring boot:
+https://www.djamware.com/post/5a792ecb80aca7059c142978/spring-boot-mongodb-and-angular-5-crud-java-web-application
+
+1) ng new frontend --skip-git
+This created a huge frontend directory (i.e Application)
+
+Orig .gitignore had this:  
+# e2e
+/e2e/*.js
+/e2e/*.map
+I changed to:
+/e2e
+
+Also added this to proj level git-ignore:
+/src/main/resources/static
+
+2) Modified outDir as specified in - angular-cli.json
+"outDir": "../src/main/resources/static",
+
+3) cd to frontend and run  (install will install modules listed in package.json)
+npm install
+ng build
+
+The above now puts stuff in src/main/resources/static/
+
+Now used this link from beginning up to "The Resource Server" to get login working.
+https://spring.io/guides/tutorials/spring-security-and-angular-js/
+
+
+NOTE:  After changes in frontend/app I have been in dir /frontend  using command ng build   
+to regenerate files in my project static folder
+
+
+Install Angular Material via this:
+https://material.angular.io/guide/getting-started
+NOTE:  I did the install in my /frontend directory
+Step 1:  I did as is
+Step 2:  I skipped for now
+Step 4:  Added to the styles.css
+Step 5:  Skipped for now
+
+And reinstall specific version:
+....\frontend> npm install --save @angular/material@5.2.5  @angular/cdk@5.2.5
+
+NOW:
+1) Pulled in stuff from my saved off zip file.
+2)  SpringInit gave me:  2.0.2.RELEASE so I updated POM to 1.5.12
+3)  Added below to properties.yml and removed flavi.icon from static
+security:
+  ignored:
+  - "*.bundle.*"
+4) Now add new logic to handle Login and save user in localstorage, etc.
+
+
+Add ngx-charts:
+(  reference:   https://www.beyondjava.net/blog/charts-with-angular-ngx-charts-formerly-ng2d3/ )
+(note:  look at his code for imports and such )
+1) npm i --save @swimlane/ngx-charts@7.3.0  (seems version 8 has ang 6 depend)
+2) npm install d3@5.1.0 --save  (seem to be the same time as above)   
+2) npm i @types/d3@5.0.0 --save-dev
+3)  Add below to angular-cli.json
+"styles": [
+   "styles.css",
+   "../node_modules/@swimlane/ngx-charts/release/ngx-charts.css"
+],
+ 
+5) removed these 2 on bar and line to stop legend from showing
+			  class="chart-container"
+			  legend="false"
