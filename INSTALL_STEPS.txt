@@ -32,16 +32,6 @@ Also added this to proj level git-ignore:
 
 3) cd to frontend and run  (install will install modules listed in package.json)
 npm install
-ng build
-
-The above now puts stuff in src/main/resources/static/
-
-Now used this link from beginning up to "The Resource Server" to get login working.
-https://spring.io/guides/tutorials/spring-security-and-angular-js/
-
-
-NOTE:  After changes in frontend/app I have been in dir /frontend  using command ng build   
-to regenerate files in my project static folder
 
 
 Install Angular Material via this:
@@ -55,14 +45,6 @@ Step 5:  Skipped for now
 And reinstall specific version:
 ....\frontend> npm install --save @angular/material@5.2.5  @angular/cdk@5.2.5
 
-NOW:
-1) Pulled in stuff from my saved off zip file.
-2)  SpringInit gave me:  2.0.2.RELEASE so I updated POM to 1.5.12
-3)  Added below to properties.yml and removed flavi.icon from static
-security:
-  ignored:
-  - "*.bundle.*"
-4) Now add new logic to handle Login and save user in localstorage, etc.
 
 
 Add ngx-charts:
