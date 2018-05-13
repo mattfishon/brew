@@ -1,0 +1,81 @@
+<div class="tran-content">
+	<div class="pie-content">
+	    <mat-card class="pie-card">
+		    <mat-card-header>
+				  <span>Visits</span>
+			</mat-card-header>
+	        <mat-card-content>
+					<ngx-charts-advanced-pie-chart
+					  *ngIf="visible"
+					  [scheme]="visitsPieColorScheme"
+					  [results]="visitsPieData"
+					  legend="true">
+					</ngx-charts-advanced-pie-chart>
+			</mat-card-content>
+	    </mat-card>
+	    <mat-card class="pie-card">
+		    <mat-card-header>
+				  Visitors
+			</mat-card-header>
+	        <mat-card-content>
+					<ngx-charts-advanced-pie-chart
+					  *ngIf="visible"
+					  [scheme]="visitorsPieColorScheme"
+					  [results]="visitorsPieData"
+					  legend="true">
+					</ngx-charts-advanced-pie-chart>
+			</mat-card-content>
+	    </mat-card>
+	</div>
+    <mat-card  class="bar-card">
+	    <mat-card-header>
+			  <span>Visit Duration</span>
+		</mat-card-header>
+	   <mat-card-content>
+			<ngx-charts-bar-vertical
+			  *ngIf="visible"
+			  [view]="view"
+			  [scheme]="barColorScheme"
+			  schemeType="ordinal"
+			  [results]="barData"
+			  roundDomains="true"
+			  gradient="false"
+			  xAxis="true"
+			  yAxis="true"
+			  showXAxisLabel="true"
+			  showYAxisLabel="true"
+			  xAxisLabel="Length of visit"
+			  yAxisLabel="Visitors"
+			  (select)="select($event)">
+			</ngx-charts-bar-vertical>
+	   </mat-card-content>
+	</mat-card>	
+    <mat-card class="line-card">
+	    <mat-card-header >
+			  <span>Daily Visitors</span>
+		</mat-card-header>
+	   <mat-card-content>
+	     <div class="line-card-content">
+			<ngx-charts-line-chart
+			  *ngIf="visible"
+			  [scheme]="lineColorScheme"
+			  schemeType="ordinal"
+			  [results]="testData"
+			  roundDomains="true"
+			  gradient="false"
+			  xAxis="true"
+			  yAxis="true"
+			  showXAxisLabel="true"
+			  showYAxisLabel="true"
+			  xAxisLabel="Time"
+			  yAxisLabel="Visitors"
+			  autoScale="false"
+			  timeline="false"
+			  showGridLines="true"
+			  (select)="select($event)">
+			</ngx-charts-line-chart>
+	      </div>
+	   </mat-card-content>
+	</mat-card>	
+		
+</div>

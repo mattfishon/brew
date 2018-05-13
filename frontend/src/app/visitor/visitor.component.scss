@@ -1,0 +1,52 @@
+@import '../vars.scss';
+
+.mat-card-header {
+    background-color: mat-color($primaryPalette, lighter) !important;
+    padding: 5px !important;
+    justify-content: left;
+}
+
+.mat-card {
+    padding: 0 !important;
+}
+
+.mat-card-content {
+    padding: 5px !important;
+}
+.tran-content {
+  padding: 1px 1rem;
+}
+.bar-card {
+  max-width: 750px;
+  min-height: 250px;
+  margin: 2em auto;
+  text-align: center;
+ }
+.test-card {
+  max-width: 750px;
+  min-height: 700px;
+  margin: 2em auto;
+  text-align: center;
+ }
+.test1 {
+  margin: 1em auto;
+  text-align: center;
+}
+.line-card {
+  max-width: 750px;
+  margin: 2em auto;
+}
+.line-card-content {
+  min-height: 300px;
+}
+.pie-content {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2px 1rem;
+}
+.pie-card {
+  max-width: 275px;
+  min-height: 275px;
+  margin: 2em auto;
+  text-align: center;
+}
