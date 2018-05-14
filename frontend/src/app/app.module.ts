@@ -10,6 +10,7 @@ import './rxjs-operators';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppMaterialModule } from './app-material/app-material.module';
+import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDividerModule} from '@angular/material/divider';
 
 import { HeaderComponent } from './header/header.component';
@@ -74,6 +75,7 @@ export class XhrInterceptor implements HttpInterceptor {
     ReactiveFormsModule,
     AppMaterialModule,
     MatDividerModule,
+	MatGridListModule,    
     NgxChartsModule
   ],
   providers: [AuthGuard, AuthService, TransitService, AppService, { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],

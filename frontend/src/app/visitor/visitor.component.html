@@ -1,4 +1,75 @@
 <div class="tran-content">
+  <div class="list-container">
+	<mat-grid-list cols="4" rowHeight="275px" gutterSize="50px">
+		  <mat-grid-tile>
+			    <mat-grid-tile-header>
+			     Visits
+			    </mat-grid-tile-header>
+			     <ngx-charts-pie-grid
+				  *ngIf="visible"
+				  minWidth="100"
+				  [scheme]="visitsPieColorScheme"
+				  [results]="visitsPieData">
+				</ngx-charts-pie-grid>
+		  </mat-grid-tile>
+		  <mat-grid-tile>
+			    <mat-grid-tile-header>
+			     Total Vists
+			    </mat-grid-tile-header>
+			    <div class="number-font">1,672</div>
+		  </mat-grid-tile>
+		  <mat-grid-tile>
+			    <mat-grid-tile-header>
+			     Visitors
+			    </mat-grid-tile-header>
+				     <ngx-charts-pie-grid
+					  *ngIf="visible"
+				      minWidth="100"					  
+					  [scheme]="visitorsPieColorScheme"
+ 					  [results]="visitsPieData">
+					</ngx-charts-pie-grid>
+		  </mat-grid-tile>
+		  <mat-grid-tile>
+			    <mat-grid-tile-header>
+			     Total Visitors
+			    </mat-grid-tile-header>
+			    <div class="number-font">1,042</div>
+		  </mat-grid-tile>
+	</mat-grid-list>
+  </div>
+  <div class="list-container">
+	<mat-grid-list cols="3" rowHeight="260px" gutterSize="50px">
+		  <mat-grid-tile>
+			    <mat-grid-tile-header>
+			     Visits
+			    </mat-grid-tile-header>
+			     <ngx-charts-advanced-pie-chart
+				  *ngIf="visible"
+				  [scheme]="visitsPieColorScheme"
+				  [results]="visitsPieData"
+				  legend="true">
+				</ngx-charts-advanced-pie-chart>
+		  </mat-grid-tile>
+		  <mat-grid-tile>
+			    <mat-grid-tile-header>
+			     Visitors
+			    </mat-grid-tile-header>
+					<ngx-charts-advanced-pie-chart
+					  *ngIf="visible"
+			          [view]="pieView"					  
+					  [scheme]="visitorsPieColorScheme"
+					  [results]="visitorsPieData"
+					  legend="true">
+					</ngx-charts-advanced-pie-chart>
+		  </mat-grid-tile>
+		  <mat-grid-tile>
+			    <mat-grid-tile-header>
+			     Walk-bys
+			    </mat-grid-tile-header>
+			    <div class="number-font">260</div>
+		  </mat-grid-tile>
+	</mat-grid-list>
+  </div>
 	<div class="pie-content">
 	    <mat-card class="pie-card2">
 		    <mat-card-header>
@@ -20,6 +91,7 @@
 	        <mat-card-content class="pie-card2-content">
 					<ngx-charts-advanced-pie-chart
 					  *ngIf="visible"
+			          [view]="pieView"					  
 					  [scheme]="visitorsPieColorScheme"
 					  [results]="visitorsPieData"
 					  legend="true">

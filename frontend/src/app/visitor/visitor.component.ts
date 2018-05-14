@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { colorSets as ngxChartsColorsets } from '@swimlane/ngx-charts/release/utils/color-sets';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 //import d3 from '@swimlane/ngx-charts/release/d3';
 
