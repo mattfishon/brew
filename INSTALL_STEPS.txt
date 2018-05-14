@@ -62,3 +62,10 @@ Add ngx-charts:
 5) removed these 2 on bar and line to stop legend from showing
 			  class="chart-container"
 			  legend="false"
+			  
+TODO:  
+1) /src/styles.css -   Add global ngx overrides as I can't get to work in component scss yet!
+2) /src/polyfill.ts - Uncomment stuff for IE to work and fix import of classlist to abs path
+
+Had to install this after uncommenting polyfill stuff.
+npm i classlist@1.0.1 --save 
