@@ -74,7 +74,7 @@ public class BrewApplication {
 	    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 	        auth.inMemoryAuthentication()
 	                .withUser("jfk1")
-	                    .password("wifi2016")
+	                    .password("jfk1")
 	                    .roles("USER")
 	            .and()
 	                .withUser("manager")
