@@ -1,0 +1,45 @@
+<div class="list-content">
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Grains
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+	<button mat-raised-button (click)="addRow()"> Add row </button>
+	
+	<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+	  <ng-container matColumnDef="{{column}}" *ngFor="let column of definedColumns">
+	    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+	    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+	  </ng-container>
+	
+	  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+	  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+	</table>
+  </mat-expansion-panel>
+  
+  <mat-expansion-panel [expanded]="true" (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Hops
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+	<mat-list>
+	  <mat-list-item *ngFor="let hop of hops; last as last">
+	    <p mat-line> {{hop.name}}    {{hop.ppg}}  </p>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+	  </mat-list-item>
+	</mat-list>
+	<mat-action-row>
+  <mat-form-field>
+    <mat-select placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  </mat-action-row>
+  </mat-expansion-panel>
+</div>
