@@ -1,0 +1,33 @@
+Install Angular locally to override global version:
+npm install @angular/cli
+I installed it locally at the project root folder...it created:
+C:\project root\node_modules\@angular
+
+Now following instrs below in section 5 only to hook angular into spring boot:
+https://www.djamware.com/post/5a792ecb80aca7059c142978/spring-boot-mongodb-and-angular-5-crud-java-web-application
+
+1) ng new frontend 
+This created a huge frontend directory (i.e Application)
+
+2) Modified outDir as specified
+NOTE: With Ang 6 it seems to be angular.json file
+
+3) cd to frontend and run  (install will install modules listed in package.json)
+npm install
+ng build
+
+Install Angular Material via this:
+https://material.angular.io/guide/getting-started
+NOTE:  I did the install in my /frontend directory
+Step 1:  I did as is
+Step 2:  I skipped for now
+Step 4:  Added to the styles.css
+Step 5:  Skipped for now
+Step 6:  Added icon to index.
+
+
+For Material I did:
+npm install --save @angular/material @angular/cdk hammerjs
+1) fixed output path ( I believe this is covered above with OutDir which in Ang6 is Output )
+2) update styles.css
+3) added matieral icon (step 6 above) to index

@@ -1,4 +1,5 @@
 /src/main/resources/static
+/node_modules
 
 /target/
 !.mvn/wrapper/maven-wrapper.jar
